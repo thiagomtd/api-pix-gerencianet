@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import request
 from flask_restplus import Resource
 
@@ -11,7 +12,7 @@ import random
 api = server.api
 
 
-@api.route('/orders')
+@api.route('/orders', methods=["POST"])
 class Pix(Resource):
 
     def post(self, ):

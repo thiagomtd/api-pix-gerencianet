@@ -2,11 +2,6 @@
 import base64
 import requests
 import json
-import pyqrcode
-import png
-from io import BytesIO
-from PIL import Image
-from flask import send_file
 
 from utils.constants import CLIENT_ID, CLIENT_SECRET, CERTIFICADO, URL_ROOT_PROD
 
@@ -47,15 +42,8 @@ class PixService():
     def qrcode_generator(self, location_id):
         qrcode = self.create_qrcode(location_id)
         dados_qrcode = qrcode['qrcode']
-        url = pyqrcode.QRCode(dados_qrcode, error='H')
-        url.png('test.jpg', scale=10)
-        im = Image.open('test.jpg')
-        im = im.convert('RGBA')
-        img_io = BytesIO()
-        im.save(img_io, 'PNG', quality=100)
-        img_io.seek(0)
 
-        return send_file(img_io, mimetype='image/jpeg', as_attachment=False, attachment_filename='testeimageqrcod.jpg')
+        return dados_qrcode
 
     def create_order(self, txid, payload):
 
