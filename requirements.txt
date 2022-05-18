@@ -7,6 +7,7 @@ click==7.1.2
 Flask==1.1.2
 flask-helpers==0.1
 flask-restplus==0.13.0
+flask-restx==0.5.1
 gunicorn==20.1.0
 idna==2.10
 importlib-metadata==3.4.0
