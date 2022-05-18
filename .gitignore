@@ -130,8 +130,8 @@ dmypy.json
 
 
 chain-pix-prod.crt
-src/certificado.pem
-src/prod281691.p12
+certificado.pem
+prod281691.p12
 .vscode
 prod281691.p12
 test.jpg
