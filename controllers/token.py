@@ -1,5 +1,3 @@
-from flask_restx import Resource
-
 from server.instance import server
 from services.pix import PixService
 
@@ -7,7 +5,7 @@ api = server.api
 
 
 @api.route('/token', methods=['POST'])
-class Token(Resource):
+class Token():
 
     def post(self, ):
         pix_service = PixService()

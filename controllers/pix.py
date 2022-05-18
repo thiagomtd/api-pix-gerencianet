@@ -1,5 +1,4 @@
 from flask import request
-from flask_restx import Resource
 
 from server.instance import server
 from services.pix import PixService
@@ -12,12 +11,9 @@ api = server.api
 
 
 @api.route('/orders', methods=["POST"])
-class Pix(Resource):
-
+class Pix():
     def post(self, ):
-
         payload = request.json
-
         data = {
             "txid": ''.join(random.choice(string.ascii_uppercase +
                                           string.digits) for _ in range(32)),
