@@ -1,4 +1,3 @@
-from flask import request
 from flask_restplus import Resource
 
 from server.instance import server

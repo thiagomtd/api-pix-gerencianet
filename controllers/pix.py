@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import request
 from flask_restplus import Resource
 
@@ -18,8 +17,6 @@ class Pix(Resource):
     def post(self, ):
 
         payload = request.json
-
-        print(payload)
 
         data = {
             "txid": ''.join(random.choice(string.ascii_uppercase +
