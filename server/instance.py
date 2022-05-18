@@ -14,7 +14,7 @@ class Server(object):
 
     def run(self):
         self.app.run(
-            debug=False,
+            debug=True,
         )
 
 

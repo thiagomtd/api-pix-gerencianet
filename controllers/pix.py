@@ -1,4 +1,5 @@
 from flask import request
+from flask_restx import Resource
 
 from server.instance import server
 from services.pix import PixService
@@ -11,7 +12,7 @@ api = server.api
 
 
 @api.route('/orders', methods=["POST"])
-class Pix():
+class Pix(Resource):
     def post(self, ):
         payload = request.json
         data = {
