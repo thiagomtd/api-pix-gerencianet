@@ -1,10 +1,10 @@
 from flask import Flask
-from flask_restx import Api
+from flask_restplus import Api
 
 
 class Server(object):
     def __init__(self):
-        self.app = Flask(__name__)
+        self.app = Flask(__name__, template_folder="../templates")
         self.api = Api(self.app,
                        version='1.0',
                        title='API PIX Gerencianet',

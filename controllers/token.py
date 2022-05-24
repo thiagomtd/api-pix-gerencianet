@@ -1,4 +1,4 @@
-from flask_restx import Resource
+from flask_restplus import Resource
 
 from server.instance import server
 from services.pix import PixService

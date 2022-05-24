@@ -1,5 +1,5 @@
 from flask import request
-from flask_restx import Resource
+from flask_restplus import Resource
 
 from server.instance import server
 from services.pix import PixService
@@ -22,7 +22,7 @@ class Pix(Resource):
                 "expiracao": 3600
             },
             "valor": {
-                "original": payload["valor"]
+                "original": payload["price"]
             },
             "chave": "19e9eed9-d57b-43a4-80c3-9e8f3a945c9f",
             "solicitacaoPagador": "Informe o número ou identificador do pedido."
