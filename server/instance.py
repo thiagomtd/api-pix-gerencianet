@@ -3,6 +3,8 @@ from flask_restplus import Api
 
 
 class Server(object):
+    aqui = {}
+
     def __init__(self):
         self.app = Flask(__name__, template_folder="../templates")
         self.api = Api(self.app,

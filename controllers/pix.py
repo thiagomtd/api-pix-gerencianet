@@ -14,7 +14,9 @@ api = server.api
 @api.route('/orders', methods=["POST"])
 class Pix(Resource):
     def post(self, ):
-        payload = request.json
+        valor = request.args.get("valor")
+        produto = request.args.get("produto")
+
         data = {
             "txid": ''.join(random.choice(string.ascii_uppercase +
                                           string.digits) for _ in range(32)),
@@ -22,14 +24,16 @@ class Pix(Resource):
                 "expiracao": 3600
             },
             "valor": {
-                "original": payload["price"]
+                "original": valor
             },
             "chave": "19e9eed9-d57b-43a4-80c3-9e8f3a945c9f",
-            "solicitacaoPagador": "Informe o número ou identificador do pedido."
+            "solicitacaoPagador": f"pague o {produto}"
         }
 
         txid = data.pop('txid')
-
         pix_service = PixService()
         response = pix_service.create_cobranca(txid, data)
+        server.aqui = response["imagemQrcode"]
+        
+
         return response

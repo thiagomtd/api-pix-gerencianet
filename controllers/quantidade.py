@@ -1,15 +1,14 @@
 from flask import render_template
 
-
 from server.instance import server
 app = server.app
 
 
-@app.route('/amendoim')
-def amendoim():
-    return render_template('amendoim.html')
+@app.route('/produto1')
+def produto1():
+    return render_template('produto1.html')
 
 
-@app.route('/mms')
-def mms():
-    return render_template('mms.html')
+@app.route('/produto2')
+def produto2():
+    return render_template('produto2.html')
