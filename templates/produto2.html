@@ -327,10 +327,9 @@
               onclick="
               qrcode({ valor: '5.00'})
                 .then(data =>{   
-                  console.log(data)
                   window.location.href = `http://127.0.0.1:5000/qrcode`
                   })
-                .catch(() => console.log('falha'))
+                .catch()
               "
               class="sc-ksZaOG efMVlb"
             >
