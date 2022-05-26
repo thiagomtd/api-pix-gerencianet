@@ -21,7 +21,7 @@ class Pix(Resource):
             "txid": ''.join(random.choice(string.ascii_uppercase +
                                           string.digits) for _ in range(32)),
             "calendario": {
-                "expiracao": 3600
+                "expiracao": 86400
             },
             "valor": {
                 "original": valor
@@ -34,6 +34,5 @@ class Pix(Resource):
         pix_service = PixService()
         response = pix_service.create_cobranca(txid, data)
         server.aqui = response["imagemQrcode"]
-        
 
         return response

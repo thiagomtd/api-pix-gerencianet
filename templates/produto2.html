@@ -230,24 +230,24 @@
       }
     </style>
     <script>
-      let count = 5
+      let count = 1
       let quantidade = 1
 
       function increment() {
-        count = count + 5
+        count = count + 1
         quantidade = quantidade + 1
 
         document.getElementById('valor').innerHTML = `Valor: R$${count},00`
-        document.getElementById('peso').innerHTML = `Peso: ${quantidade * 25}g`
+        document.getElementById('peso').innerHTML = `Peso: ${quantidade * 20}g`
       }
       function decrement() {
-        if (count !== 5) {
-          count = count - 5
+        if (count !== 1) {
+          count = count - 1
           quantidade = quantidade - 1
 
           document.getElementById('valor').innerHTML = `Valor: R$${count},00`
           document.getElementById('peso').innerHTML = `Peso: ${
-            quantidade * 25
+            quantidade * 20
           }g`
         }
       }
@@ -257,7 +257,7 @@
           method: 'POST',
         }
         return fetch(
-          `http://127.0.0.1:5000/orders?produto=${'Amendoim salgado'}&quantidade=${quantidade}&valor=${count}.00`,
+          `http://127.0.0.1:5000/orders?produto=${'Jelly beans'}&quantidade=${quantidade}&valor=${count}.00`,
           options
         ).then((T) => T.json())
       }
@@ -267,7 +267,7 @@
           method: 'POST',
         }
         return fetch(
-          `http://127.0.0.1:5000/orders?produto=${'Amendoim salgado'}&quantidade=${quantidade}&valor=${count}.00`,
+          `http://127.0.0.1:5000/orders?produto=${'Jelly beans'}&quantidade=${quantidade}&valor=${count}.00`,
           options
         ).then((T) => T.json())
       }
@@ -281,9 +281,9 @@
           class="sc-iBkjds caAnpe"
         /><span class="sc-ftvSup fNwFkV"></span>
         <div class="sc-papXJ cYtZtE">
-          <h1 class="sc-jqUVSM kAZoix">Amendoim salgado</h1>
-          <h1 id="peso" class="sc-jqUVSM kAZoix">Peso: 25g</h1>
-          <h1 id="valor" class="sc-kDDrLX cXOBse">Valor:R$5,00</h1>
+          <h1 class="sc-jqUVSM kAZoix">Jelly beans</h1>
+          <h1 id="peso" class="sc-jqUVSM kAZoix">Peso: 20g</h1>
+          <h1 id="valor" class="sc-kDDrLX cXOBse">Valor:R$1,00</h1>
           <div class="sc-iqcoie cIlPjE">
             <button onclick="decrement()" class="sc-breuTD bnwhgd">
               <svg

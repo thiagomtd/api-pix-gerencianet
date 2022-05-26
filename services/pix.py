@@ -41,7 +41,6 @@ class PixService():
 
     def qrcode_generator(self, location_id):
         qrcode = self.create_qrcode(location_id)
-        # dados_qrcode = qrcode['qrcode']
 
         return qrcode
 
