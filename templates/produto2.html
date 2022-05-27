@@ -260,7 +260,7 @@
           method: 'POST',
         }
         return fetch(
-          `http://127.0.0.1:5000/orders?produto=${'Jelly beans'}&quantidade=${quantidade}&valor=${count}.00`,
+          `http://127.0.0.1:5000/orders?produto=Jelly&quantidade=${quantidade}&valor=${count}.00`,
           options
         ).then((T) => T.json())
       }
@@ -270,7 +270,7 @@
           method: 'POST',
         }
         return fetch(
-          `http://127.0.0.1:5000/orders?produto=${'Jelly beans'}&quantidade=${quantidade}&valor=${count}.00`,
+          `http://127.0.0.1:5000/orders?produto=Jelly&quantidade=${quantidade}&valor=${count}.00`,
           options
         ).then((T) => T.json())
       }
@@ -330,7 +330,7 @@
               onclick="
               qrcode({ valor: '5.00'})
                 .then(data =>{   
-                  window.location.href = `http://127.0.0.1:5000/qrcode?produto=Jelly beans&quantidade=${quantidade}`
+                  window.location.href = `http://127.0.0.1:5000/qrcode?produto=Jelly&quantidade=${quantidade}`
                   })
                 .catch()
               "
