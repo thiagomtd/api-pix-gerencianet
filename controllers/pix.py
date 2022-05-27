@@ -18,10 +18,14 @@ class Pix(Resource):
         produto = request.args.get("produto")
         quantidade = request.args.get("quantidade")
 
+        txid = ''.join(random.choice(string.ascii_uppercase +
+                                          string.digits) for _ in range(32))
+
+        print(txid)
+
 
         data = {
-            "txid": ''.join(random.choice(string.ascii_uppercase +
-                                          string.digits) for _ in range(32)),
+            "txid": txid,
             "calendario": {
                 "expiracao": 86400
             },

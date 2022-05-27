@@ -12,7 +12,7 @@ def qrcode():
     quantidade = server.quantidadeProduto
     produto = server.produto
     qrcode = server.qrcode
-    entregarProduto()
+   # entregarProduto()
     return render_template('qrcode.html', qrcode=qrcode, quantidade=quantidade, produto=produto)
 
 
