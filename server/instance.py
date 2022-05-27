@@ -3,7 +3,9 @@ from flask_restplus import Api
 
 
 class Server(object):
-    aqui = {}
+    qrcode = {}
+    quantidadeProduto=0
+    produto=""
 
     def __init__(self):
         self.app = Flask(__name__, template_folder="../templates")

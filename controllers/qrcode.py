@@ -1,7 +1,5 @@
-from crypt import methods
 from time import sleep
 from flask import render_template
-from flask import request
 from gpiozero import Motor
 from time import sleep
 
@@ -11,13 +9,17 @@ app = server.app
 
 @app.route('/qrcode')
 def qrcode():
-    quantidade = request.args.get("quantidade")
-    produto = request.args.get("produto")
-    qrcode = server.aqui
+    quantidade = server.quantidadeProduto
+    produto = server.produto
+    qrcode = server.qrcode
+    entregarProduto()
     return render_template('qrcode.html', qrcode=qrcode, quantidade=quantidade, produto=produto)
 
 
-def entregarProduto(produto, quantidade):
+def entregarProduto():
+    quantidade = server.quantidadeProduto
+    produto = server.produto
+
     amendoim = Motor(17, 27)
     jelly = Motor(22, 23)
 

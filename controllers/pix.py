@@ -16,6 +16,8 @@ class Pix(Resource):
     def post(self, ):
         valor = request.args.get("valor")
         produto = request.args.get("produto")
+        quantidade = request.args.get("quantidade")
+
 
         data = {
             "txid": ''.join(random.choice(string.ascii_uppercase +
@@ -33,6 +35,7 @@ class Pix(Resource):
         txid = data.pop('txid')
         pix_service = PixService()
         response = pix_service.create_cobranca(txid, data)
-        server.aqui = response["imagemQrcode"]
-
+        server.qrcode = response["imagemQrcode"]
+        server.produto = produto
+        server.quantidadeProduto = quantidade
         return response
