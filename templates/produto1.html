@@ -230,7 +230,9 @@
       }
     </style>
     <script>
-      document.addEventListener('contextmenu', event => event.preventDefault())
+      document.addEventListener('contextmenu', (event) =>
+        event.preventDefault()
+      )
       let count = 1
       let quantidade = 1
 
@@ -328,7 +330,7 @@
               onclick="
               qrcode({ valor: '5.00'})
                 .then(data =>{   
-                  window.location.href = `http://127.0.0.1:5000/qrcode`
+                  window.location.href = `http://127.0.0.1:5000/qrcode?produto=Amendoim&quantidade=${quantidade}`
                   })
                 .catch()
               "

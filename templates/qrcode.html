@@ -312,7 +312,10 @@
       }
     </style>
     <script>
-      document.addEventListener('contextmenu', event => event.preventDefault())
+      document.addEventListener('contextmenu', (event) =>
+        event.preventDefault()
+      )
+      console.log(`{{ quantidade }} {{ produto }}`)
     </script>
   </head>
   <body>
