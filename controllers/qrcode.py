@@ -69,7 +69,7 @@ def produto1(tempo):
 
 
 def produto2(tempo):
-    motor = Motor(22, 23)
-    motor.backward(0.6)
+    motor2 = Motor(22, 23)
+    motor2.backward(0.6)
     sleep(tempo*0.5)
-    motor.stop()
+    motor2.stop()
