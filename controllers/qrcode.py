@@ -25,7 +25,10 @@ def validar():
 
     if verificar_pagamento != server.saldo:
         if produto == "Amendoim":
-            produto1(quantidade)
+            motor = Motor(17, 27)
+            motor.forward(0.6)
+            sleep(quantidade*0.5)
+            motor.stop()
             response = make_response(
                 jsonify(
                     {
@@ -36,7 +39,10 @@ def validar():
             )
             return response
         elif produto == "Jelly":
-            produto2(quantidade)
+            motor2 = Motor(22, 23)
+            motor2.backward(0.6)
+            sleep(quantidade*0.5)
+            motor2.stop()
             response = make_response(
                 jsonify(
                     {
@@ -59,17 +65,3 @@ def validar():
 
     response.headers["Access-Control-Allow-Origin"] = "*"
     return response
-
-
-def produto1(tempo):
-    motor = Motor(17, 27)
-    motor.forward(0.6)
-    sleep(tempo*0.5)
-    motor.stop()
-
-
-def produto2(tempo):
-    motor2 = Motor(22, 23)
-    motor2.backward(0.6)
-    sleep(tempo*0.5)
-    motor2.stop()
