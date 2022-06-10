@@ -21,7 +21,6 @@ class Pix(Resource):
         txid = ''.join(random.choice(string.ascii_uppercase +
                                      string.digits) for _ in range(32))
 
-        print(txid)
 
         data = {
             "txid": txid,
@@ -41,6 +40,5 @@ class Pix(Resource):
         server.qrcode = response["imagemQrcode"]
         server.produto = produto
         server.saldo = pix_service.get_saldo()
-        print(server.saldo)
         server.quantidadeProduto = quantidade
         return response
