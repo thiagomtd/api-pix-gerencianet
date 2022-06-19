@@ -26,7 +26,6 @@ def validar():
     if verificar_pagamento != server.saldo:
         if produto == "Amendoim":
             motores.motor2(quantidade)
-
             response = make_response(
                 jsonify(
                     {
