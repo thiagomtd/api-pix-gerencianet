@@ -1,8 +1,6 @@
-from gpiozero import Motor
-from time import sleep
 from flask import render_template, jsonify, make_response
 from services.pix import PixService
-import controllers.motores as motores
+#import controllers.motores as motores
 
 from server.instance import server
 app = server.app
@@ -24,8 +22,8 @@ def validar():
     produto = server.produto
 
     if verificar_pagamento != server.saldo:
-        if produto == "Amendoim":
-            motores.motor2(quantidade)
+        if produto == "Disquete":
+            # motores.motor2(quantidade)
             response = make_response(
                 jsonify(
                     {
@@ -35,8 +33,8 @@ def validar():
                 200,
             )
             return response
-        elif produto == "Jelly":
-            motores.motor1(quantidade)
+        elif produto == "Chiquete":
+            # motores.motor1(quantidade)
             response = make_response(
                 jsonify(
                     {
