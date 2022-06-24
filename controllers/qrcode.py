@@ -1,6 +1,6 @@
 from flask import render_template, jsonify, make_response
 from services.pix import PixService
-#import controllers.motores as motores
+import controllers.motores as motores
 
 from server.instance import server
 app = server.app
@@ -23,7 +23,7 @@ def validar():
 
     if verificar_pagamento != server.saldo:
         if produto == "Disquete":
-            # motores.motor2(quantidade)
+            motores.motor2(quantidade)
             response = make_response(
                 jsonify(
                     {
@@ -33,8 +33,8 @@ def validar():
                 200,
             )
             return response
-        elif produto == "Chiquete":
-            # motores.motor1(quantidade)
+        elif produto == "Chiclete":
+            motores.motor1(quantidade)
             response = make_response(
                 jsonify(
                     {

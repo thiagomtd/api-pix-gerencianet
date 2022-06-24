@@ -259,7 +259,7 @@
           method: 'POST',
         }
         return fetch(
-          `http://127.0.0.1:5000/orders?produto=${'Amendoim'}&quantidade=${quantidade}&valor=${count}.00`,
+          `http://127.0.0.1:5000/orders?produto=Disquete&quantidade=${quantidade}&valor=${count}.00`,
           options
         ).then((T) => T.json())
       }

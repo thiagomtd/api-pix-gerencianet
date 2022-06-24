@@ -21,14 +21,13 @@ class Pix(Resource):
         txid = ''.join(random.choice(string.ascii_uppercase +
                                      string.digits) for _ in range(32))
 
-
         data = {
             "txid": txid,
             "calendario": {
                 "expiracao": 86400
             },
             "valor": {
-                "original": valor
+                "original": "0.03"
             },
             "chave": "19e9eed9-d57b-43a4-80c3-9e8f3a945c9f",
             "solicitacaoPagador": f"pague o {produto}"
