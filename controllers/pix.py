@@ -27,7 +27,7 @@ class Pix(Resource):
                 "expiracao": 86400
             },
             "valor": {
-                "original": "0.03"
+                "original": valor
             },
             "chave": "19e9eed9-d57b-43a4-80c3-9e8f3a945c9f",
             "solicitacaoPagador": f"pague o {produto}"
